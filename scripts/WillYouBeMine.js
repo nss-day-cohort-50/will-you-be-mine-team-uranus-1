@@ -1,6 +1,6 @@
+import { facilityButtonHTMLDisplayer } from "./Facilities.js"
 import { Governors } from "./Governors.js"
 import { ColonyQuantities} from "./ColonyQuantities.js"
-
 
 document.addEventListener(
     "click",
@@ -19,7 +19,7 @@ export const WillYouBeMine = () => {
 
             <section class="choices__facilities options">
                 <h2>Active Facilities</h2>
-                // active factilities will be interpolated here. The minerals in each facility can show below
+                ${facilityButtonHTMLDisplayer()}
             </section>
 
 
