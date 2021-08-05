@@ -1,4 +1,5 @@
 import { Governors } from "./Governors.js"
+import { ColonyQuantities} from "./ColonyQuantities.js"
 
 
 document.addEventListener(
