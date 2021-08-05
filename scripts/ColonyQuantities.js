@@ -34,12 +34,6 @@ document.addEventListener(
     }
 )
 
-// for (const colony of colonies) {
-//     if (colony.id === parseInt(colonyId))
-
-//     for (const quantity of quantities) {
-//         if (quantity.colonyId === colony.id)
-
 
 export const ColonyQuantities = () => {
     let colonyHTML = "<ul>"
