@@ -3,15 +3,7 @@ import { getGovernors } from "./database.js"
 const governors = getGovernors()
 
 
-// document.addEventListener(
-//     "change",
-//     (event) => {
-//         if (event.target.name === "governor" && event.target.checked === true) {
-//             setGovernor(parseInt(event.target.value))
-//             }
-//         }
-
-// )
+// 
 
 export const Governors = () => {
     let html = `<div class='dropdown'>
@@ -34,3 +26,9 @@ export const Governors = () => {
    html +="</div>"
     return html
 }
+
+
+
+
+
+

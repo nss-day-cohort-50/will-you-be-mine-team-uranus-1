@@ -179,3 +179,41 @@ export const getColonies = () => {
 export const getColonyQuantities = () => {
     return database.colonyQuantities.map(colonyQuantity => ({ ...colonyQuantity }))
 }
+
+
+
+export const setGovernor = (id) => {
+    database.orderBuilder.governorId = id
+    document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+
+
+
+export const addCustomOrder = () => {
+    // Copy the current state of user choices
+    const newOrder = {...database.orderBuilder}
+
+    // Add a new primary key to the object
+
+    if (database.customOrders.length === 0){
+        newOrder.id =1
+    }
+    else {
+    const lastIndex = database.customOrders.length - 1
+    newOrder.id = database.customOrders[lastIndex].id + 1
+    }
+    // Add a timestamp to the order
+    newOrder.timestamp = Date.now()
+
+    // totalCost= database.orderBuilder.sizePrice + database.orderBuilder.metalPrice + database.orderBuilder.stylePrice
+
+    // Add the new order object to custom orders state
+    database.customOrders.push(newOrder)
+
+    // Reset the temporary state for user choices
+    database.orderBuilder = {}
+
+    // Broadcast a notification that permanent state has changed
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+}
