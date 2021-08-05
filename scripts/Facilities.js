@@ -1,19 +1,28 @@
 import {getFacilities, getMinerals} from "./database.js"
 
 const facilities = getFacilities()
-const minerals = getMinerals()
+const minerals = getMinerals
 
 export const FacilityButton = () => {
     let html = "<section class='facilities--flex'>"
-    const facilityDivsForHTML = facilities.map(facility => {
+    const facilityButtonList = facilities.map(facility => {
         if(facility.active === true) {
             return `<div>
                 <button class=facility--button id="${facility.id}">${facility.name}</button>
             </div>`
         }
     })
-    html += facilityDivsForHTML.join("")
+    html += facilityButtonList.join("")
     html += "</section>"
 
     return html
 }
+
+document.addEventListener(
+    "click",
+    (event) => {
+        if (event.target.id === facility.id){
+            const facility
+        }
+    }
+)
