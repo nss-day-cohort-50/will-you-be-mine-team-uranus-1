@@ -17,12 +17,3 @@ export const FacilityButton = () => {
 
     return html
 }
-
-document.addEventListener(
-    "click",
-    (event) => {
-        if (event.target.id === facility.id){
-            const facility
-        }
-    }
-)

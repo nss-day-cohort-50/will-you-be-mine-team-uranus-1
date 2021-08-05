@@ -1,4 +1,4 @@
-import { facilityButtonHTMLDisplayer } from "./Facilities.js"
+import { FacilityButton } from "./Facilities.js"
 import { Governors } from "./Governors.js"
 
 document.addEventListener(
@@ -18,7 +18,7 @@ export const WillYouBeMine = () => {
 
             <section class="choices__facilities options">
                 <h2>Active Facilities</h2>
-                ${facilityButtonHTMLDisplayer()}
+                ${FacilityButton()}
             </section>
 
 
