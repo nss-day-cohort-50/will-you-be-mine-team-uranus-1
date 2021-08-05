@@ -46,8 +46,8 @@ export const WillYouBeMine = () => {
 
                 <section class="choices__available-resources options">
                      <h2>Available Resources for Colony</h2>
-                    // available resources will be interpolated here
-                 </section> */}
+                    ${ColonyQuantities()}
+                 </section>
 
             </div>
 
