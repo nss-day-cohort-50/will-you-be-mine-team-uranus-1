@@ -5,8 +5,9 @@ const governors = getGovernors()
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "governor") {
-            setGovernor(parseInt(event.target.value && event.target.checked === true))
+        if (event.target.value !== 0 && event.target.checked === true) {
+
+            setGovernor(parseInt(event.target.value))
         }
     }
 )
@@ -14,20 +15,21 @@ document.addEventListener(
 
 export const Governors = () => {
     const orderBuilder = getOrderBuilder()
-    let html = `<ul class="dropdown">
-    <button class="dropbtn">Governors</button>`
+    let html = `<select  class="dropdown"> 
+    <option value="0">Please select a Governor...</option>`
+    // <button class="dropbtn">${ (governor.id === orderBuilder.governorId) ? ${governor.name} : "Governors" }</button>`
 
     // This is how you have been converting objects to <li> elements
    const listItems = governors.map(governor=>{
         return `
         <li class="dropdown-content">
-            <input ${ (governor.id === orderBuilder.governorId) ? "checked" : "" } type="checkbox" name="governor" value="${governor.id}">${governor.name}</input>   
+            <option ${ (governor.id === orderBuilder.governorId) ? "checked" : "" }  name="governor" value="${governor.id}">${governor.name}</input>   
         </li>`
 
    })
 
    html+= listItems.join("")
-   html +="</ul>"
+   html +="</select>"
     return html
 }
 
