@@ -180,6 +180,11 @@ export const getColonyQuantities = () => {
     return database.colonyQuantities.map(colonyQuantity => ({ ...colonyQuantity }))
 }
 
+export const getFacilities = () => {
+    return database.facilities.map(facility => ({ ...facility }))
+}
+
+
 
 
 export const setGovernor = (id) => {
