@@ -2,30 +2,18 @@
 
 const database = {
 
-    orderBuilder: {},
+    orderBuilder: {
+        id: 1,
+        governorId: 1,
+        facilityQuantityId: 1,
+        colonyQuantityId: 1
+    },
 
     minerals: [
-        {
-            id: 1,
-            name: "Zinc",
-            price: 3.50
-        },
-        {
-            id: 2,
-            name: "Gold",
-            price: 10
-        },
-
-        {
-            id: 3,
-            name: "Salt",
-            price: 1.27
-        },
-        {
-            id: 4,
-            name: "Iron",
-            price: 7
-        }
+        {id: 1, name: "Zinc", price: 3.50},
+        {id: 2, name: "Gold", price: 10},
+        {id: 3, name: "Salt", price: 1.27 },
+        {id: 4, name: "Iron", price: 7}
     ],
 
     governors: [
@@ -180,14 +168,14 @@ export const getColonyQuantities = () => {
     return database.colonyQuantities.map(colonyQuantity => ({ ...colonyQuantity }))
 }
 
-
+export const getOrderBuilder = () => {
+    return {...database.orderBuilder}
+}
 
 export const setGovernor = (id) => {
     database.orderBuilder.governorId = id
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
-
-
 
 
 export const addCustomOrder = () => {
