@@ -1,9 +1,9 @@
 import {getFacilities, getMinerals} from "./database.js"
 
 const facilities = getFacilities()
-const minerals = getMinerals
+const minerals = getMinerals()
 
-export const facilityButtonHTMLDisplayer = () => {
+export const FacilityButton = () => {
     let html = "<section class='facilities--flex'>"
     const facilityDivsForHTML = facilities.map(facility => {
         if(facility.active === true) {
