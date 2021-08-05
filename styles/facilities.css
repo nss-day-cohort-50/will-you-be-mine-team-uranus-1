@@ -1,0 +1,8 @@
+.facilities--flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.facility--button{
+    margin: 10px;
+}

@@ -171,6 +171,12 @@ export const getColonyQuantities = () => {
 export const getOrderBuilder = () => {
     return {...database.orderBuilder}
 }
+export const getFacilities = () => {
+    return database.facilities.map(facility => ({ ...facility }))
+}
+
+
+
 
 export const setGovernor = (id) => {
     database.orderBuilder.governorId = id
