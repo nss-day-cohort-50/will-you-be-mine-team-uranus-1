@@ -1,5 +1,6 @@
 import { FacilityButton } from "./Facilities.js"
 import { Governors } from "./Governors.js"
+import { ColonyQuantities} from "./ColonyQuantities.js"
 
 document.addEventListener(
     "click",
@@ -45,8 +46,8 @@ export const WillYouBeMine = () => {
 
                 <section class="choices__available-resources options">
                      <h2>Available Resources for Colony</h2>
-                    // available resources will be interpolated here
-                 </section> */}
+                    ${ColonyQuantities()}
+                 </section>
 
             </div>
 
