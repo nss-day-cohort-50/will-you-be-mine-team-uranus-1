@@ -6,6 +6,7 @@ document.addEventListener(
     "change",
     (event) => {
         if (event.target.id === "governors" ) {
+            
             setGovernor(parseInt(event.target.value))
         }
     }

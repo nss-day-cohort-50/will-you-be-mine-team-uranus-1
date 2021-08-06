@@ -1,4 +1,4 @@
-import { FacilityButton } from "./Facilities.js"
+import {FacilityButton } from "./Facilities.js"
 import { Governors } from "./Governors.js"
 import { ColonyQuantities} from "./ColonyQuantities.js"
 
@@ -20,13 +20,18 @@ export const WillYouBeMine = () => {
             <section class="choices__facilities options">
                 <h2>Active Facilities</h2>
                 ${FacilityButton()}
+                <div class="mineral--options">
+                </div>
+        
+               
+
             </section>
 
 
 
             <section class="choices__minerals options">
                 <h2>Chosen Minerals</h2>
-            //    the chosen minerals will be interpolated here
+           
             </section>
 
 
@@ -35,7 +40,7 @@ export const WillYouBeMine = () => {
         </article>
 
 
-        // I wraped the two sections below in a div so that we can use flexbox to make them side by side
+ 
 
             <div class="governor-resources-container">
 
