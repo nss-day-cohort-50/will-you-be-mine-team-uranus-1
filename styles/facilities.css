@@ -6,3 +6,8 @@
 .facility--button{
     margin: 10px;
 }
+
+.mineral--options {
+    display: flex;
+    flex-wrap: wrap;
+}
