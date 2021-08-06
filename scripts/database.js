@@ -175,6 +175,10 @@ export const getFacilities = () => {
     return database.facilities.map(facility => ({ ...facility }))
 }
 
+export const getFacilityQuantities = () => {
+    return database.facilityQuantities.map(facilityQuantitiy => ({ ...facilityQuantitiy }))
+}
+
 
 
 
