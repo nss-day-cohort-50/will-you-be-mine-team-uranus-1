@@ -1,4 +1,4 @@
-import {getFacilities, setFacility, getMinerals, getFacilityQuantities, getOrderBuilder } from "./database.js"
+import {getFacilities, setFacility, getMinerals, setMineralPurchase,getFacilityQuantities, getOrderBuilder } from "./database.js"
 
 const facilities = getFacilities()
 const minerals = getMinerals()
@@ -19,6 +19,16 @@ document.addEventListener(
 )
 
 
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "mineral" && event.target.checked === true) {
+            setMineralPurchase(parseInt(event.target.value ))
+        }
+    }
+)
+
+
 export const MineralButtons = () => {
     const state = getOrderBuilder()
     let html ="<ul>"
@@ -26,7 +36,7 @@ export const MineralButtons = () => {
         if (state.facilityId === quantity.facilityId) {
             const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)  
                 html += `<li>
-                            <input type ="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
+                            <input ${ (mineral.id === state.mineralPurchaseId) ? "checked" : "" } type="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
                          </li>`  
         }
     }    
