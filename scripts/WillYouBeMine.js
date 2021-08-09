@@ -34,7 +34,7 @@ export const WillYouBeMine = () => {
 
             <section class="choices__minerals options">
                 <h2>Chosen Minerals</h2>
-                ${Orders()}
+                    ${Orders()}
             </section>
 
 

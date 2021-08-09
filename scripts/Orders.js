@@ -1,30 +1,17 @@
-import { getMinerals, getOrderBuilder } from "./database";
+import { getOrderBuilder, getMinerals } from "./database.js";
 
+const currentOrder = getOrderBuilder()
+const minerals = getMinerals()
 
-
-
-const buildOrderListItem = () => {
-    
-    const minerals = getMinerals()
-    const foundMinerals = minerals.find(
-        (mineral) => { return mineral.id === order.mineralId}
-    )
-        return `<li>
-            ${order.quantity} ton of ${order.name} from...
-        </li>`
-    }
-
+const buildOrderListItem = (order) => {
+    if( minerals.id===order.mineralPurchaseId){
+        return `<li>${minerals.name}</li>`}
+}   
 
 export const Orders = () => {
-
-    const orders = getOrderBuilder()
     let html = "<ul>"
-    const listItems = orders.map(buildOrderListItem)
+    const listItems = currentOrder.map(buildOrderListItem)
     html += listItems.join("")
     html += "</ul>"
     return html
 }
-
-
-
-
