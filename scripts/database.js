@@ -88,6 +88,12 @@ export const setFacility = (id) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+export const setMineralPurchase = (id) => {
+    database.orderBuilder.mineralPurchaseId = id
+    document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
+
 
 export const addCustomOrder = () => {
     // Copy the current state of user choices
