@@ -83,6 +83,11 @@ export const setGovernor = (id) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+export const setFacility = (id) => {
+    database.orderBuilder.facilityId = id
+    document.dispatchEvent( new CustomEvent("stateChanged") )
+}
+
 
 export const addCustomOrder = () => {
     // Copy the current state of user choices
