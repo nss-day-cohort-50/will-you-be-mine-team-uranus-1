@@ -4,8 +4,6 @@ const facilities = getFacilities()
 const minerals = getMinerals()
 const facilityQuantities = getFacilityQuantities()
 
-
-
 document.addEventListener(
     "click",
     (event) => { 
