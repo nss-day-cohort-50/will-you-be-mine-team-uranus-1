@@ -1,4 +1,4 @@
-import {FacilityButton } from "./Facilities.js"
+import {FacilityButton, MineralButtons } from "./Facilities.js"
 import { Governors } from "./Governors.js"
 import { ColonyQuantities} from "./ColonyQuantities.js"
 
@@ -20,8 +20,9 @@ export const WillYouBeMine = () => {
             <section class="choices__facilities options">
                 <h2>Active Facilities</h2>
                 ${FacilityButton()}
-                <div  class="mineral--options">
                 
+                <div  class="mineral--options">
+                ${MineralButtons()}
                 </div>
         
                

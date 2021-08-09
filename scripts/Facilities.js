@@ -1,4 +1,4 @@
-import {getFacilities, getMinerals, getFacilityQuantities, getOrderBuilder } from "./database.js"
+import {getFacilities, setFacility, getMinerals, getFacilityQuantities, getOrderBuilder } from "./database.js"
 
 const facilities = getFacilities()
 const minerals = getMinerals()
@@ -10,28 +10,28 @@ document.addEventListener(
         const mineralContainer = document.querySelector(".mineral--options")
         for (const quantity of facilityQuantities) {
             if ( parseInt(event.target.id) === quantity.facilityId) {
-
-                mineralContainer.innerHTML += mineralButtons()
+                mineralContainer.innerHTML += MineralButtons()
+                setFacility(parseInt(event.target.id))
             }
         }                  
     }       
 )
 
-const mineralButtons = () => {
-    
+
+export const MineralButtons = () => {
+    const state = getOrderBuilder()
     let html ="<ul>"
-        for (const quantity of facilityQuantities) {
-            for (const mineral of minerals) {
-                if (quantity.mineralId === mineral.id ) {
-                        html += `<li>
-                                    <input type ="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
-                                 </li>`   
-                }    
-            }   
-        
+    for (const quantity of facilityQuantities) {
+        if (state.facilityId === quantity.facilityId) {
+            const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)  
+                html += `<li>
+                            <input type ="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
+                         </li>`  
         }
+    }    
+   
     html += "</ul>"
-        return html
+    return html
 }
 
 
@@ -50,6 +50,10 @@ export const FacilityButton = () => {
 
     return html
 }
+
+
+
+
 
 
 
