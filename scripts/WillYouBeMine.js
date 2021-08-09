@@ -1,6 +1,7 @@
 import {FacilityButton, MineralButtons } from "./Facilities.js"
 import { Governors } from "./Governors.js"
 import { ColonyQuantities} from "./ColonyQuantities.js"
+import { Orders } from "./Orders.js"
 
 document.addEventListener(
     "click",
@@ -33,7 +34,7 @@ export const WillYouBeMine = () => {
 
             <section class="choices__minerals options">
                 <h2>Chosen Minerals</h2>
-           
+                ${Orders()}
             </section>
 
 
