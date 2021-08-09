@@ -11,7 +11,7 @@ export const ChosenMinerals = () => {
         if (state.mineralPurchaseId === mineral.id) {
             const mineral = minerals.find(mineral => mineral.id === state.mineralPurchaseId)  
                 html += `<li>
-                            ${mineral.id} costs $ ${mineral.price}
+                            ${mineral.name} costs $ ${mineral.price}
                          </li>`  
         }
     }    
