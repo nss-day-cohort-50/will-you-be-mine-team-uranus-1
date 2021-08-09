@@ -39,7 +39,7 @@ export const ColonyQuantities = () => {
     let colonyHTML = "<ul>"
 
     for (const colony of colonies) {
-        colonyHTML += `<li id="colony--${colony.id}">${colony.name}</li>`
+        colonyHTML += `<li class="colony--quantities" id="colony--${colony.id}">${colony.name}</li>`
 
     }
     colonyHTML += "</ul>"
