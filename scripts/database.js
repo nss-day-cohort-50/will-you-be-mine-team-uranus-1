@@ -44,7 +44,8 @@ const database = {
         {id: 1, facilityId: 1, mineralId: 2, quantity: 10},
         {id: 2, facilityId: 2, mineralId: 3, quantity: 20},
         {id: 3, facilityId: 3, mineralId: 4, quantity: 7},
-        {id: 4, facilityId: 4, mineralId: 1, quantity: 15}
+        {id: 4, facilityId: 4, mineralId: 1, quantity: 15},
+        {id: 5, facilityId: 4, mineralId: 2, quantity: 15}
     ]
 
 }

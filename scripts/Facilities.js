@@ -6,35 +6,171 @@ const facilityQuantities = getFacilityQuantities()
 
 
 
+// document.addEventListener(
+//     "click",
+//     (event) => { 
+//         const mineralContainer = document.querySelector(".mineral--options")
+//         for (const quantity of facilityQuantities) {
+//             if ( parseInt(event.target.id) === quantity.facilityId) {
+
+//                 mineralContainer.innerHTML += mineralButtons()
+//             }
+//         }                  
+//     }       
+// )
+
+// const mineralButtons = () => {
+    
+//     let html ="<ul>"
+//         for (const quantity of facilityQuantities) {
+//             for (const mineral of minerals) {
+//                 if (quantity.mineralId === mineral.id ) {
+//                         html += `<li>
+//                                     <input type ="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
+//                                  </li>`   
+//                 }    
+//             }   
+        
+//         }
+//     html += "</ul>"
+//         return html
+// }
+
+
+
+
+
+
 document.addEventListener(
     "click",
     (event) => { 
-        const mineralContainer = document.querySelector(".mineral--options")
+        // const mineralContainer = document.querySelector(".mineral--options")
         for (const quantity of facilityQuantities) {
+        
             if ( parseInt(event.target.id) === quantity.facilityId) {
-
-                mineralContainer.innerHTML += mineralButtons()
+                const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)
+                window.alert(`${mineral.name}.`)
             }
-        }                  
-    }       
+        }
+        }                        
 )
 
-const mineralButtons = () => {
+// const mineralButtons = () => {
     
-    let html ="<ul>"
-        for (const quantity of facilityQuantities) {
-            for (const mineral of minerals) {
-                if (quantity.mineralId === mineral.id ) {
-                        html += `<li>
-                                    <input type ="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
-                                 </li>`   
-                }    
-            }   
+//     let html ="<ul>"
+//         for (const quantity of facilityQuantities) {
+//             for (const mineral of minerals) {
+//                 if (quantity.mineralId === mineral.id ) {
+//                         html += `<li>
+//                                     <input type ="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
+//                                  </li>`   
+//                 }    
+//             }   
         
-        }
-    html += "</ul>"
-        return html
-}
+//         }
+//     html += "</ul>"
+//         return html
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener(
+//     "click",
+//     (clickEvent) => {
+//         const itemClicked = clickEvent.target
+//         if (itemClicked.id.startsWith("facility")) {
+//             const [, facilityId] = itemClicked.id.split("--")
+
+//             for (const pet of pets) {
+//                 if ( pet.id === parseInt(petId)) {
+
+
+//                     const walker = walkers.find(walker => walker.id === pet.walkerId)
+
+
+//                     window.alert(`${mineral.name}.`)
+//                 }
+//             }
+//         }
+//     }
+// )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener(
+//     "click",
+//     (event) => { 
+//         // const mineralContainer = document.querySelector(".mineral--options")
+//         for (const quantity of facilityQuantities) {
+//                 if ( parseInt(event.target.id) === quantity.facilityId && quantity.mineralId === minerals.id) {
+//                     html += `<li>
+//                     <input type ="checkbox" name="mineral" value="${minerals.id}"> ${minerals.name} </input>  
+//                  </li>`   
+//                 }     
+
+//         }
+//         html += "</ul>"
+//         return html 
+//     } 
+// )
+
+
+// const mineralButtons = () => {
+    
+//     let html ="<ul>"
+//         for (const quantity of facilityQuantities) {
+//             for (const mineral of minerals) {
+//                 if (quantity.mineralId === mineral.id ) {
+//                         html += `<li>
+//                                     <input type ="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
+//                                  </li>`   
+//                 }    
+//             }   
+        
+//         }
+//     html += "</ul>"
+//         return html
+// }
+
+
+
+
+
+
+
+
+
+
 
 
 export const FacilityButton = () => {
