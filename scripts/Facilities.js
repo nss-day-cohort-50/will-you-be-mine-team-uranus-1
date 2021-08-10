@@ -31,6 +31,7 @@ document.addEventListener(
 
 export const MineralButtons = () => {
     const state = getOrderBuilder()
+    
     let html ="<ul>"
     for (const quantity of facilityQuantities) {
         if (state.facilityId === quantity.facilityId) {

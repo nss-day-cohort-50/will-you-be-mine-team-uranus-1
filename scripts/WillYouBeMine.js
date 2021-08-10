@@ -23,7 +23,7 @@ export const WillYouBeMine = () => {
                 <h2>Active Facilities</h2>
                 ${FacilityButton()}
                 
-                <div  class="mineral--options">
+                <div class="mineral--options">
                 ${MineralButtons()}
                 </div>
         
