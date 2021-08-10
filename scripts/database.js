@@ -2,7 +2,7 @@
 
 const database = {
 
-    orderBuilder: {},
+    orderBuilder: {mineralPurchaseIdArray: []},
 
     minerals: [
         {id: 1, name: "Zinc", price: 3.50},
@@ -70,6 +70,11 @@ export const getColonyQuantities = () => {
 export const getOrderBuilder = () => {
     return {...database.orderBuilder}
 }
+
+const orderBuilderListItems = getOrderBuilder()
+console.log(orderBuilderListItems.mineralPurchaseIdArray)
+
+
 export const getFacilities = () => {
     return database.facilities.map(facility => ({ ...facility }))
 }
@@ -89,7 +94,7 @@ export const setFacility = (id) => {
 }
 
 export const setMineralPurchase = (id) => {
-    database.orderBuilder.mineralPurchaseId = id
+    database.orderBuilder.mineralPurchaseIdArray.push(id)
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 

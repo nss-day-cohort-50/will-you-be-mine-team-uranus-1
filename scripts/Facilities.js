@@ -22,9 +22,11 @@ document.addEventListener(
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "mineral" && event.target.checked === true) {
-            setMineralPurchase(parseInt(event.target.value ))
+        if (event.target.name === "mineral" && event.target.checked === true) {   
+            setMineralPurchase(parseInt(event.target.value))
         }
+        const orderBuilderListItems = getOrderBuilder()
+        console.log(orderBuilderListItems.mineralPurchaseIdArray)
     }
 )
 
@@ -37,7 +39,7 @@ export const MineralButtons = () => {
             const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)  
                 html += `<li>
                             <input ${ (mineral.id === state.mineralPurchaseId) ? "checked" : "" } type="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
-                         </li>`  
+                         </li>` 
         }
     }    
    
@@ -61,6 +63,24 @@ export const FacilityButton = () => {
 
     return html
 }
+
+
+
+
+// const createNote = (note) => {
+
+//     const lastIndex = notes.length -1
+//     const currentLastNote = notes[lastIndex]
+//     const maxId = currentLastNote.id
+//     const idForNewNote = maxId +1
+
+//     note.id = idForNewNote
+
+//     const newDate = new Date()
+//     note.date = newDate
+//     notes.push(note)
+//     console.log(`${note.id} ${note.date}`)
+// }
 
 
 
