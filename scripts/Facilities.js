@@ -25,22 +25,23 @@ document.addEventListener(
         if (event.target.name === "mineral" && event.target.checked === true) {   
             setMineralPurchase(parseInt(event.target.value))
         }
-        const orderBuilderListItems = getOrderBuilder()
-        console.log(orderBuilderListItems.mineralPurchaseIdArray)
     }
 )
 
 
 export const MineralButtons = () => {
-    const state = getOrderBuilder()
+    const states = getOrderBuilder()
     let html ="<ul>"
     for (const quantity of facilityQuantities) {
-        if (state.facilityId === quantity.facilityId) {
-            const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)  
-                html += `<li>
-                            <input ${ (mineral.id === state.mineralPurchaseId) ? "checked" : "" } type="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
+        for (const state of states){
+             if (state.facilityId === quantity.facilityId) {
+                const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)  
+                    html += `<li>
+                            <input ${ (mineral.id === state.mineralPurchaseIdArray) ? "checked" : "" } type="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
                          </li>` 
-        }
+            }
+        }                
+
     }    
    
     html += "</ul>"
