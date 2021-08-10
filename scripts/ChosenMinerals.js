@@ -19,3 +19,7 @@ export const ChosenMinerals = () => {
     html += "</ul>"
     return html
 }
+
+
+
+
