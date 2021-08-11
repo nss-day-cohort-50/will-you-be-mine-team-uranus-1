@@ -71,8 +71,7 @@ export const getOrderBuilder = () => {
     return {...database.orderBuilder}
 }
 
-const orderBuilderListItems = getOrderBuilder()
-console.log(orderBuilderListItems.mineralPurchaseIdArray)
+
 
 
 export const getFacilities = () => {
@@ -94,7 +93,7 @@ export const setFacility = (id) => {
 }
 
 export const setMineralPurchase = (id) => {
-    database.orderBuilder.mineralPurchaseIdArray.push(id)
+    database.orderBuilder.mineralId = id
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 

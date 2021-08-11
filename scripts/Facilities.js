@@ -30,18 +30,15 @@ document.addEventListener(
 
 
 export const MineralButtons = () => {
-    const states = getOrderBuilder()
+    const state = getOrderBuilder()
     let html ="<ul>"
     for (const quantity of facilityQuantities) {
-        for (const state of states){
-             if (state.facilityId === quantity.facilityId) {
-                const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)  
-                    html += `<li>
+        if (state.facilityId === quantity.facilityId) {
+            const mineral = minerals.find(mineral => mineral.id === quantity.mineralId)  
+                html += `<li>
                             <input ${ (mineral.id === state.mineralPurchaseIdArray) ? "checked" : "" } type="checkbox" name="mineral" value="${mineral.id}"> ${mineral.name} </input>  
                          </li>` 
-            }
-        }                
-
+        }
     }    
    
     html += "</ul>"

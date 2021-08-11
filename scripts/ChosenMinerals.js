@@ -1,4 +1,4 @@
-import { getOrderBuilder, getMinerals, getFacilities, getFacilityQuantities, getColonyQuantities } from "./database.js"
+import { getOrderBuilder, getMinerals } from "./database.js"
 // import { getFacilities, getFacilityQuantities, getColonyQuantities } from "./database.js"
 
 
@@ -71,7 +71,7 @@ export const ChosenMinerals = () => {
     const state = getOrderBuilder()
     let html ="<ul>"
     for (const mineral of minerals) {
-        if (state.mineralPurchaseId === mineral.id) {
+        if (state.mineralId === mineral.id) {
             
                 html += `<li>
                             ${mineral.name} costs $ ${mineral.price}
