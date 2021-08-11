@@ -1,7 +1,18 @@
-import { getOrderBuilder, getFacilityQuantities, getMinerals } from "./database.js"
+import { getOrderBuilder, getFacilityQuantities, getMinerals, setMineralChoice } from "./database.js"
 
 const mineralFacilities = getFacilityQuantities()
 const minerals = getMinerals()
+
+
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "mineral" && event.target.checked === true) {
+            setMineralChoice(parseInt(event.target.id))
+        }
+    }
+)
+
 
 export const MineralDisplay = () => {
     const state = getOrderBuilder()
@@ -9,7 +20,7 @@ export const MineralDisplay = () => {
     const arrayMatchedItems = mineralFacilityObjects.map(mineralFacilityObject => {
     const MatchedMineralObject = minerals.find(mineral => mineral.id === mineralFacilityObject.mineralId)    
         return `<div>
-        <input type="radio">${mineralFacilityObject.quantity} ${MatchedMineralObject.name}
+        <input name="mineral" id="matchedMineralObject.id" type="radio">${mineralFacilityObject.quantity} ${MatchedMineralObject.name}
         </div>` 
     }).join("")
 
