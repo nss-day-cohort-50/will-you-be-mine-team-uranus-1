@@ -9,7 +9,7 @@ document.addEventListener(
     "click",
     (clickEvent) => {
         const itemClicked = clickEvent.target
-        if (itemClicked.id.startsWith("")) {
+        if (itemClicked.id.startsWith("mineralColony")) {
             const [, colonyId] = itemClicked.id.split("--")
 
 
@@ -39,7 +39,7 @@ export const ColonyQuantities = () => {
     let colonyHTML = "<ul>"
 
     for (const colony of colonies) {
-        colonyHTML += `<li class="colony--quantities" id="colony--${colony.id}">${colony.name}</li>`
+        colonyHTML += `<li class="colony--quantities" id="mineralColony--${colony.id}">${colony.name}</li>`
 
     }
     colonyHTML += "</ul>"
