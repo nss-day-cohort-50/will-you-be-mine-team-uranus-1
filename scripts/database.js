@@ -2,7 +2,9 @@
 
 const database = {
 
-    orderBuilder: {},
+    orderBuilder: {
+        facilityId: 0
+    },
 
     minerals: [
         {id: 1, name: "Zinc", price: 3.50},
