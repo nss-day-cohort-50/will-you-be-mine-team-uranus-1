@@ -3,7 +3,8 @@
 const database = {
 
     orderBuilder: {
-        facilityId: 0
+        facilityId: 0,
+        mineralId: 0
     },
 
     minerals: [
@@ -72,6 +73,10 @@ export const getColonyQuantities = () => {
 export const getOrderBuilder = () => {
     return {...database.orderBuilder}
 }
+
+
+
+
 export const getFacilities = () => {
     return database.facilities.map(facility => ({ ...facility }))
 }
@@ -90,8 +95,8 @@ export const setFacility = (id) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
-export const setMineralPurchase = (id) => {
-    database.orderBuilder.mineralPurchaseId = id
+export const setMineralChoice = (id) => {
+    database.orderBuilder.mineralId = id
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 

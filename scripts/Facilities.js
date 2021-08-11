@@ -1,4 +1,4 @@
-import { getFacilities, setFacility, getMinerals, setMineralPurchase, getFacilityQuantities, getOrderBuilder } from "./database.js"
+import { getFacilities, setFacility, getMinerals, setMineralChoice, getFacilityQuantities, getOrderBuilder } from "./database.js"
 
 const facilities = getFacilities()
 const minerals = getMinerals()
@@ -13,16 +13,6 @@ document.addEventListener(
                 const [, facilityId]=itemClicked.id.split("--")
                 setFacility(parseInt(facilityId))
             }        
-    }
-)
-
-
-document.addEventListener(
-    "change",
-    (event) => {
-        if (event.target.name === "mineral" && event.target.checked === true) {
-            setMineralPurchase(parseInt(event.target.value))
-        }
     }
 )
 
@@ -63,6 +53,24 @@ export const FacilityButton = () => {
 
     return html
 }
+
+
+
+
+// const createNote = (note) => {
+
+//     const lastIndex = notes.length -1
+//     const currentLastNote = notes[lastIndex]
+//     const maxId = currentLastNote.id
+//     const idForNewNote = maxId +1
+
+//     note.id = idForNewNote
+
+//     const newDate = new Date()
+//     note.date = newDate
+//     notes.push(note)
+//     console.log(`${note.id} ${note.date}`)
+// }
 
 
 

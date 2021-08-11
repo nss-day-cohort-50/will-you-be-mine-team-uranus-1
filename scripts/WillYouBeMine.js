@@ -5,14 +5,6 @@ import { ChosenMinerals } from "./ChosenMinerals.js"
 import {MineralDisplay } from "./FacilityMinerals.js"
 
 
-document.addEventListener(
-    "click",
-    (event) => {
-        if (event.target.id === "orderButton") {
-            addCustomOrder()
-        }
-    }
-)
 
 export const WillYouBeMine = () => {
     return `
