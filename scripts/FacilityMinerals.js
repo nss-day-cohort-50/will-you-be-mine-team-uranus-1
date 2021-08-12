@@ -20,7 +20,7 @@ export const MineralDisplay = () => {
     const arrayMatchedItems = mineralFacilityObjects.map(mineralFacilityObject => {
     const MatchedMineralObject = minerals.find(mineral => mineral.id === mineralFacilityObject.mineralId)    
         return `<div>
-        <input name="mineral" id="matchedMineralObject.id" type="radio">${mineralFacilityObject.quantity} ${MatchedMineralObject.name}
+        <input name="mineral" id="${MatchedMineralObject.id}" type="radio">${mineralFacilityObject.quantity} ${MatchedMineralObject.name}
         </div>` 
     }).join("")
 
