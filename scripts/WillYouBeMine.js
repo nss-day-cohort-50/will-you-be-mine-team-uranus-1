@@ -1,6 +1,6 @@
-import {FacilityButton, MineralButtons } from "./Facilities.js"
+import {FacilityButton } from "./Facilities.js"
 import { Governors } from "./Governors.js"
-import { ColonyQuantities} from "./ColonyQuantities.js"
+import { GovornorColony } from "./Colonies.js"
 import { ChosenMinerals } from "./ChosenMinerals.js"
 import {MineralDisplay } from "./FacilityMinerals.js"
 
@@ -42,7 +42,7 @@ export const WillYouBeMine = () => {
 
                 <section class="choices__available-resources options">
                      <h2>Available Resources for Colony</h2>
-                    ${ColonyQuantities()}
+                    ${GovornorColony()}
                  </section>
 
             </div>

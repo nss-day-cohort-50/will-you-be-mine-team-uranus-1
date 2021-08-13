@@ -1,50 +1,32 @@
-import { getColonies, getColonyQuantities, getMinerals } from "./database.js"
+import { getColonies, getColonyQuantities, getGovernors, getMinerals, getOrderBuilder } from "./database.js"
 
 
 const colonies = getColonies()
-const quantities = getColonyQuantities()
+const colonyMinerals = getColonyQuantities()
 const minerals = getMinerals()
+const governors = getGovernors()
 
-document.addEventListener(
-    "click",
-    (clickEvent) => {
-        const itemClicked = clickEvent.target
-        if (itemClicked.id.startsWith("mineralColony")) {
-            const [, colonyId] = itemClicked.id.split("--")
-
-
-
-            for (const colony of colonies) {
-                if (colony.id === parseInt(colonyId)) {
-
-                    for (const quantity of quantities) {
-                        if (quantity.colonyId === colony.id) {
-                            for (const mineral of minerals) {
-                                if (mineral.id === quantity.mineralId) {
-                                    
-                                    window.alert(`${colony.name} has ${quantity.quantity} tons of ${mineral.name} `)
-                                }
-                            }
-                            
-                        }
-                    }
-                }
-            }
-        }
-    }
-)
 
 
 export const ColonyQuantities = () => {
-    let colonyHTML = "<ul>"
+    const state = getOrderBuilder()
 
-    for (const colony of colonies) {
-        colonyHTML += `<li class="colony--quantities" id="mineralColony--${colony.id}">${colony.name}</li>`
 
-    }
-    colonyHTML += "</ul>"
-    return colonyHTML
-}
+            const ColonyObjects = governors.filter(colonyObject => state.governorId === colonyObject.governorId)
+            const arrayMatchedColonies = ColonyObjects.map(ColonyObject => {
+                const MatchedColonyObject = colonyMinerals.find(colonyMineral => colonies.id === colonyMineral.colonylId)
+                const MatchedColonyMineralObject = minerals.find(matchedMineral => MatchedColonyObject.mineralId === matchedMineral.id)
+                return `<ul>
+        <li id="${MatchedColonyObject.id}" type="radio">${ColonyObject.name} has ${MatchedColonyObject.quantity} of ${MatchedColonyMineralObject.name} </li>
+        </ul>`
+            }).join("")
+
+            return arrayMatchedColonies
+        }
+
+// )
+
+
 
 
 

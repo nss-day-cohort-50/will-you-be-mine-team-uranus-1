@@ -8,7 +8,7 @@ document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "mineral" && event.target.checked === true) {
-            setMineralChoice(parseInt(event.target.id))
+            setMineralChoice(parseInt(event.target.id), parseInt())
         }
     }
 )
